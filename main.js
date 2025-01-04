@@ -4,6 +4,7 @@ import banner from "./utils/banner.js";
 import log from "./utils/logger.js";
 import performTransactions from './utils/transactions.js';
 import { mintNft, signMessage } from './contract.js';
+import { HttpsProxyAgent } from 'https-proxy-agent';
 
 const reffCode = `bfc7b70e-66ad-4524-9bb6-733716c4da94`;
 const proxyPath = 'proxy.txt';
@@ -20,37 +21,25 @@ const headers = {
     'x-plaza-vercel-server': 'undefined',
 };
 
-const createAxiosInstance = (proxyUrl) => {
+const createAxiosInstance = (proxyUrl = null) => {
+    const baseURL = 'https://api.plaza.finance/';
+
     if (proxyUrl) {
-        const proxyParts = proxyUrl.match(/^http:\/\/([^:]+):([^@]+)@([^:]+):(\d+)$/);
+        const agent = new HttpsProxyAgent(proxyUrl);
 
-        if (proxyParts) {
-            const [, user, password, host, port] = proxyParts;
-
-            return axios.create({
-                baseURL: 'https://api.plaza.finance/',
-                headers,
-                proxy: {
-                    protocol: 'http',
-                    host: host,
-                    port: parseInt(port, 10),
-                    auth: {
-                        username: user,
-                        password: password,
-                    },
-                },
-            });
-        } else {
-            throw new Error('Invalid proxy URL format');
-        }
+        return axios.create({
+            baseURL,
+            headers,
+            httpAgent: agent,
+            httpsAgent: agent,
+        });
     } else {
         return axios.create({
-            baseURL: 'https://api.plaza.finance/',
+            baseURL,
             headers,
         });
     }
 };
-
 const getFaucet = async (address, proxyUrl) => {
     const axiosInstance = createAxiosInstance(proxyUrl);
     try {
