@@ -143,7 +143,7 @@ const main = async () => {
     while (true) {
         for (const wallet of wallets) {
             const walletKey = wallet.address.toLowerCase();
-            claimedState[walletKey] = claimedState[walletKey] || { nft1: false, nft3: false };
+            claimedState[walletKey] = claimedState[walletKey] || { nft1: false, nft3: false, nft5: false };
             const proxy = proxyList.length > 0 ? proxyList[index % proxyList.length] : null;
             log.warn(`Running Using Proxy: ${proxy || 'No Proxy'}`);
             try {
@@ -168,6 +168,15 @@ const main = async () => {
                     points,
                     nftType: 3,
                     requiredPoints: 200,
+                    wallet,
+                    proxy,
+                    claimedState,
+                });
+
+                await claimNftReward({
+                    points,
+                    nftType: 5,
+                    requiredPoints: 500,
                     wallet,
                     proxy,
                     claimedState,
