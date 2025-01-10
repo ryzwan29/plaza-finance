@@ -10,6 +10,13 @@ Plaza is a platform for programmable derivatives built as a set of Solidity smar
 - Twitter [@plaza_finance](https://x.com/plaza_finance)
 
 ## Update 
+- for now we need to manually claim eth base sepolia testnet
+- claim faucet eth here https://www.alchemy.com/faucets/base-sepolia
+- distribute eth base sepolia to all wallets in wallets.json
+- ```bash
+   npm run faucet
+   ```
+- thats it now you can rerun bot again, `npm run start`
 
 - must reinstall dependencies after `git pull` : `npm install` 
 - auto send now being sent from wallet to wallet, not from main wallet to all wallets.
