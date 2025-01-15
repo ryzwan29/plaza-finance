@@ -58,28 +58,41 @@ Plaza is a platform for programmable derivatives built as a set of Solidity smar
    ```bash
    npm install
    ```
-3. Setup: to create new wallets
-   ```bash
-   npm run create
-   ```
-
-4. Additional Feature: 
-
-- send fund to existing address
-
-    ```bash
-    npm run autosend
-    ```
-- use proxy: its optional, paste proxy in the proxy.txt file. 1 proxy per line.
-    ```bash
-    nano proxy.txt
-    ```
-    format : `http://user:password@ip:port`
-
-5. Run The Script:
+3. Insert your own wallet (single wallet):
+   - Create file with name ``wallets.json`` with format:
+     
+     ```bash
+     [
+       {
+       "address": "0xyouraddress",
+       "privateKey": "0xyourrivatekey",
+       "mnemonic": "your mnemonic phrase key"
+       }
+     ]
+     ```
+5. Run script
    ```bash
    npm run start
    ```
+
+6. Additional Feature (multi wallets):
+
+      - create new wallets
+         ```bash
+         npm run create
+         ```
+
+      - send fund to existing address
+          ```bash
+          npm run autosend
+          ```
+          
+      - use proxy: its optional, paste proxy in the proxy.txt file. 1 proxy per line.
+          ```bash
+          nano proxy.txt
+          ```
+         format : `http://user:password@ip:port`
+
 
 ## ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
