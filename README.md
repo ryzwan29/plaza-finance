@@ -37,11 +37,21 @@ Plaza is a platform for programmable derivatives built as a set of Solidity smar
 - **Wallets must have $1 in eth/base/arb mainnet to get faucet**
 - **Use feature auto send to send fund to existing wallet:** send `0.0003` eth for each addr
 
+## Buy Proxies
+- Free Proxies Static Residental: 
+   - [WebShare](https://www.webshare.io/?referral_code=p7k7whpdu2jg)
+   - [ProxyScrape](https://proxyscrape.com/?ref=odk1mmj)
+   - [MonoSans](https://github.com/monosans/proxy-list)
+- Paid Premium Static Residental:
+   - [922proxy](https://www.922proxy.com/register?inviter_code=d03d4fed)
+   - [Proxy-Cheap](https://app.proxy-cheap.com/r/JysUiH)
+   - [Infatica](https://dashboard.infatica.io/aff.php?aff=544)
+
 ## Setup
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Zlkcyber/plazafintot.git
+   git clone https://github.com/im-hanzou/plaza-finance-auto.git
    cd plazafintot
    ```
 2. Install dependencies:
