@@ -4,6 +4,8 @@ Plaza is a platform for on-chain bonds and leverage on Base.
 Plaza is a platform for programmable derivatives built as a set of Solidity smart contracts on Base. It offers two core products: bondETH and levETH, which are programmable derivatives of a pool of ETH liquid staking derivatives (LSTs) and liquid restaking derivatives (LRTs) such as wstETH. Users can deposit an underlying pool asset like wstETH and receive levETH or bondETH in return, which are represented as ERC20 tokens. These tokens are composable with protocols such as DEXes, lending markets, restaking platforms, etc.
 
 [Click This to Register Plaza Finance](https://testnet.plaza.finance/rewards/wkT6SilPvFL5)
+[Get your Base Sepolia Testnet](https://docs.base.org/docs/tools/network-faucets/)
+[Bridge your ETH Sepolia > Base Sepolia](https://sepolia-bridge.base.org/deposit)
 
 ## Features
 
