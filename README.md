@@ -1,25 +1,9 @@
 # PLAZA FINANCE BOT
-![BANNER PLAZA FINANCE](image/image-1.png)
 Plaza is a platform for on-chain bonds and leverage on Base.
 
 Plaza is a platform for programmable derivatives built as a set of Solidity smart contracts on Base. It offers two core products: bondETH and levETH, which are programmable derivatives of a pool of ETH liquid staking derivatives (LSTs) and liquid restaking derivatives (LRTs) such as wstETH. Users can deposit an underlying pool asset like wstETH and receive levETH or bondETH in return, which are represented as ERC20 tokens. These tokens are composable with protocols such as DEXes, lending markets, restaking platforms, etc.
 
-![banner](image/image.png)
-
-- Website [https://testnet.plaza.finance/](https://testnet.plaza.finance/rewards/98vbJiyYZa8R)
-- Twitter [@plaza_finance](https://x.com/plaza_finance)
-
-## Update 
-- for now we need to manually claim eth base sepolia testnet
-- claim faucet eth here https://www.alchemy.com/faucets/base-sepolia
-- distribute eth base sepolia to all wallets in wallets.json
-- ```bash
-   npm run faucet
-   ```
-- thats it now you can rerun bot again, `npm run start`
-
-- must reinstall dependencies after `git pull` : `npm install` 
-- auto send now being sent from wallet to wallet, not from main wallet to all wallets.
+[Click This to Register Plaza Finance](https://testnet.plaza.finance/rewards/wkT6SilPvFL5)
 
 ## Features
 
@@ -49,16 +33,11 @@ Plaza is a platform for programmable derivatives built as a set of Solidity smar
 
 ## Setup
 
-1. Clone this repository:
+1. Run This quick installation script
    ```bash
-   git clone https://github.com/im-hanzou/plaza-finance-auto.git
-   cd plaza-finance-auto
+   source <(curl -s https://raw.githubusercontent.com/ryzwan29/plaza-finance/main/quick-installation.sh)
    ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Insert your own wallet (single wallet):
+2. Insert your own wallet (single wallet):
    - Create file with name ``wallets.json`` with format:
      
      ```bash
@@ -67,15 +46,20 @@ Plaza is a platform for programmable derivatives built as a set of Solidity smar
        "address": "0xyouraddress",
        "privateKey": "0xyourrivatekey",
        "mnemonic": "your mnemonic phrase key"
+       },
+       {
+       "address": "0xyouraddress-2",
+       "privateKey": "0xyourrivatekey-2",
+       "mnemonic": "your mnemonic phrase key-2"
        }
      ]
      ```
-5. Run script
+3. Run script
    ```bash
    npm run start
    ```
 
-6. Additional Feature (multi wallets):
+4. Additional Feature (multi wallets):
 
       - create new wallets
          ```bash
@@ -86,6 +70,11 @@ Plaza is a platform for programmable derivatives built as a set of Solidity smar
           ```bash
           npm run autosend
           ```
+
+      - distribute eth base sepolia to all wallets in `wallets.json`
+         ```bash
+         npm run faucet
+         ```
           
       - use proxy: its optional, paste proxy in the proxy.txt file. 1 proxy per line.
           ```bash
